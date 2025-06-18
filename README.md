@@ -1,2 +1,2 @@
 # Test_Repo
-Test mirrorring to Gitlab
+Test syncing to Gitlab and publishing to pypi.
