@@ -31,14 +31,7 @@ jobs:
 
   pypi-publish:
     runs-on: ubuntu-latest
-    needs:
-      - release-build
-    permissions:
-      id-token: write
-
-    environment:
-      name: pypi
-
+    needs: release-build
     steps:
       - name: Retrieve release distributions
         uses: actions/download-artifact@v4
@@ -50,9 +43,8 @@ jobs:
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           packages-dir: dist/
-          # Specify the repository URL for TestPyPI
           repository-url: https://test.pypi.org/legacy/
         env:
-          # Use your TestPyPI token stored in GitHub Secrets
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.TEST_PYPI_TOKEN }}
+          
