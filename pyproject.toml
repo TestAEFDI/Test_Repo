@@ -11,11 +11,10 @@ requires-python = ">=3.11"  # Specify the Python version required
 authors = [
     { name = "Your Name", email = "you@example.com" }  # Replace with your name and email
 ]
-license = { text = "MIT" }  # Specify the license type
+license = { text = "MIT" }
 keywords = ["example", "package", "tutorial"]  # Keywords for package search
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
 
