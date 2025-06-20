@@ -10,6 +10,8 @@ permissions:
 jobs:
   release-build:
     runs-on: ubuntu-latest
+    env:
+      PKG_NAME: a_test_pkg
 
     steps:
       - uses: actions/checkout@v4
