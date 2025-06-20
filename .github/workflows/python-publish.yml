@@ -11,12 +11,20 @@ jobs:
   release-build:
     runs-on: ubuntu-latest
 
+    env:
+      PKG_NAME: a_test_pkg
+
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-python@v5
         with:
           python-version: "3.x"
+
+      - name: Create VERSION file
+        run: |
+          ls
+          ls "${PKG_NAME}"echo "${GITHUB_REF##*/}" > "${PKG_NAME}/VERSION"
 
       - name: Build release distributions
         run: |
@@ -35,18 +43,12 @@ jobs:
     permissions:
       id-token: write  # Required for trusted publishing
 
-    env:
-      PKG_NAME: a_test_pkg
-
     steps:
       - name: Retrieve release distributions
         uses: actions/download-artifact@v4
         with:
           name: release-dists
           path: dist/
-
-      - name: Create VERSION file
-        run: echo "${GITHUB_REF##*/}" > "${PKG_NAME}/VERSION"
 
       - name: Publish release distributions to TestPyPI
         uses: pypa/gh-action-pypi-publish@release/v1
