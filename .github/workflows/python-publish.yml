@@ -24,7 +24,8 @@ jobs:
       - name: Create VERSION file
         run: |
           ls
-          ls "${PKG_NAME}"echo "${GITHUB_REF##*/}" > "${PKG_NAME}/VERSION"
+          ls "${PKG_NAME}"
+          echo "${GITHUB_REF##*/}" > "${PKG_NAME}/VERSION"
 
       - name: Build release distributions
         run: |
