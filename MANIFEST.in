@@ -1,0 +1,4 @@
+recursive-exclude docs *
+recursive-exclude tests *
+include a_test_pkg/VERSION
+include a_test_pkg/ABOUT
