@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PKG_NAME: a_test_pkg
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout code
