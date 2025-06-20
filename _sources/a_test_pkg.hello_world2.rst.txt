@@ -1,0 +1,7 @@
+a\_test\_pkg.hello\_world2
+==========================
+
+.. automodule:: a_test_pkg.hello_world2
+   :members:
+   :show-inheritance:
+   :undoc-members:

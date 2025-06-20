@@ -1,0 +1,7 @@
+a_test_pkg
+==========
+
+.. toctree::
+   :maxdepth: 4
+
+   a_test_pkg

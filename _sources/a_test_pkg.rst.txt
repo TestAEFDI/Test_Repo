@@ -1,0 +1,15 @@
+a\_test\_pkg
+============
+
+.. automodule:: a_test_pkg
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+
+
+.. toctree::
+   :maxdepth: 4
+
+   a_test_pkg.hello_world
+   a_test_pkg.hello_world2
