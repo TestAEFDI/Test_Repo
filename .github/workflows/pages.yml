@@ -24,7 +24,11 @@ jobs:
           pip install sphinx sphinx-rtd-theme sphinx-autodoc-typehints sphinx-copybutton
 
       - name: Create VERSION file
-        run: echo "${GITHUB_REF##*/}" > "${PKG_NAME}/VERSION"  # Use the environment variable
+        run: |
+          ls
+          ls "${PKG_NAME}"
+          echo "${GITHUB_REF##*/}" > "${PKG_NAME}/VERSION"  # Use the environment variable
+          
 
       - name: Generate API documentation
         run: |
