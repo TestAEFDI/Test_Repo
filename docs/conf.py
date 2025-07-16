@@ -66,6 +66,7 @@ extensions = [
     'sphinx.ext.intersphinx',  # links to other packages
     'sphinx.ext.coverage',  # documentation coverage (not test coverage)
     'sphinx_copybutton',  # add copy button to code blocks
+    'sphinxcontrib.versions',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
