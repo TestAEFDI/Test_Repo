@@ -3,21 +3,19 @@ name: Sync Repository to GitLab
 on:
   push:
     branches:
-      - main
-      - develop
+    - main
+    - develop
 
 jobs:
   sync:
     runs-on: ubuntu-latest
+    name: Git Repo Sync
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-        
-    - name: Sync to GitLab
-      uses: keninkujovic/gitlab-sync@2.1.0
+    - uses: wangchucheng/git-repo-sync@v0.1.0
       with:
-        gitlab_url: ${{ secrets.GITLAB_URL }}
-        username: ${{ secrets.USER_NAME }}
-        gitlab_pat: ${{ secrets.GITLAB_PAT }}
+        target-url: ${{ secrets.GITLAB_URL }}
+        target-username: ${{ secrets.USER_NAME }}
+        target-token: ${{ secrets.GITLAB_PAT }}
